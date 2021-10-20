@@ -1,4 +1,8 @@
 Use the following link to capture the source and destination details and get your results: http://localhost:8080/swagger-ui.html
+Click on API Controller
+Try it out then execute
+execute savePlanets first
+
 
 1. Given that traffic delay negatively affects the distance, I have added it to the distance & come up with new column 
 read method for each sheet VS on method with different cases [ReadDataFromExcel]

@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class InterstellaDiscoveryApplication implements WebMvcConfigurer{
+public class InterstellaDiscoveryApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InterstellaDiscoveryApplication.class, args);
@@ -25,7 +25,8 @@ public class InterstellaDiscoveryApplication implements WebMvcConfigurer{
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Interstellar Transport System").description("An Interstellar Transport System used by Earth’s inhabitants in the year 2145!")
+		return new ApiInfoBuilder().title("Interstellar Transport System")
+				.description("An Interstellar Transport System used by Earth’s inhabitants in the year 2145!")
 				.version("1.0").build();
 	}
 

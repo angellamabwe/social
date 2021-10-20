@@ -9,14 +9,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="planet")
+@Table(name = "planet")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Planet {
 	@Id
 	private String node;
-	
+
 	private String name;
 
 	public String getNode() {
@@ -34,5 +34,5 @@ public class Planet {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

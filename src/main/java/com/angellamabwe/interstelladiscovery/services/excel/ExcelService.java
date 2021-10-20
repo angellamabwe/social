@@ -17,10 +17,9 @@ import com.angellamabwe.interstelladiscovery.entities.Route;
 import com.angellamabwe.interstelladiscovery.repositories.SavePlanetstoDB;
 import com.angellamabwe.interstelladiscovery.repositories.SaveRoutestoDB;
 
-
 @Service
 public class ExcelService {
-	
+
 	@Autowired
 	private SavePlanetstoDB planetsRepository;
 
@@ -31,7 +30,7 @@ public class ExcelService {
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 
 		Workbook workbook = WorkbookFactory.create(new File(excelPath));
-		
+
 		for (Sheet sheet : workbook) {
 			String sheetName = sheet.getSheetName();
 //			DataFormatter formatter = new DataFormatter();
@@ -40,7 +39,7 @@ public class ExcelService {
 				for (Row row : sheet) {
 					String node = row.getCell(0).getStringCellValue();
 					String name = row.getCell(1).getStringCellValue();
-					
+
 					Planet planet = new Planet();
 					planet.setNode(node);
 					planet.setName(name);
@@ -60,7 +59,7 @@ public class ExcelService {
 					String pDestination = row.getCell(2).getStringCellValue();
 					double distance = row.getCell(3).getNumericCellValue();
 					double distanceAfterDelay = row.getCell(4).getNumericCellValue();
-					
+
 					Route route = new Route();
 //					route.setRouteId(id);
 					route.setPlanetOrigin(pOrigin);
@@ -68,7 +67,7 @@ public class ExcelService {
 					route.setDistance(distance);
 					route.setDistanceAfterDelay(distanceAfterDelay);
 					routesRepository.save(route);
-					
+
 				}
 			}
 
@@ -91,12 +90,13 @@ public class ExcelService {
 
 		}
 	}
+
 //	retrieves Planets Node & their names
 	public Iterable<Planet> retrieveNodes() {
 		Iterable<Planet> allPlanets = planetsRepository.findAll();
 		return allPlanets;
 	}
-	
+
 	public Iterable<Route> retrieveRoutes() {
 		Iterable<Route> allRoutes = routesRepository.findAll();
 		return allRoutes;

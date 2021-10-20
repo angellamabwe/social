@@ -8,17 +8,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Graph {
 
-    private Set<Node> nodes = new HashSet<>(); //HashSet so that the nodes will be uniQue
+	private Set<Node> nodes = new HashSet<>(); // HashSet so that the nodes will be uniQue
 
-    public void addNode(Node nodeA) {
-        nodes.add(nodeA);
-    }
+	public void addNode(Node nodeA) {
+		nodes.add(nodeA);
+	}
 
-    public Set<Node> getNodes() {
-        return nodes;
-    }
+	public Set<Node> getNodes() {
+		return nodes;
+	}
 
-    public void setNodes(Set<Node> nodes) {
-        this.nodes = nodes;
-    }
+	public void setNodes(Set<Node> nodes) {
+		this.nodes = nodes;
+	}
 }
